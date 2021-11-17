@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Weather: {{ city }}{% endblock %}
+
+{% block body %}
+    <style>
+
+    </style>
+
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-md-12 mb-5">
+                {{  form_start(form_choose_city) }}
+                {{  form(form_choose_city) }}
+                {{  form_end(form_choose_city) }}
+            </div>
+            <div class="col-sm-6">
+                <h1 class="text-start">{{ "now"|date("d F Y") }}</h1>
+                <h2>{{ "now"|date("H:i") }}</h2>
+            </div>
+            <div class="col-sm-6">
+                <h2 class="text-end">{{ city }}</h2>
+            </div>
+            <div class="col-sm-12 mt-5">
+                <div class="row">
+                    <div class="col-md-5">
+                        <img src="{{ weather.IconImageUrl(4) }}"/>
+                        <div class="ps-4">
+                            <h3>{{  weather.getName }}</h3>
+                            <h5>{{  weather.getDescription }}</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card">
+                            <div class="card-body text-dark">
+                                <div class="row">
+                                    <div class="col-md-4 text-center" style="font-size: 40px">
+                                        <i class="fa-solid fa-temperature-half"></i> {{  weather.getTemperatureFeelsLike }} <sup>&#9675;</sup>C<br/>
+                                        <h3>Appreciable</h3>
+                                    </div>
+
+                                    <div class="col-md-4 fs-1 text-center">
+                                        {{  weather.getTemperatureMax }} <sup>&#9675;</sup>C<br/>
+                                        <h2>High</h2>
+                                    </div>
+
+                                    <div class="col-md-4 fs-1 text-center">
+                                        {{  weather.getTemperatureMin }} <sup>&#9675;</sup>C<br/>
+                                        <h2>Low</h2>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <hr/>
+                                        <p>Pressure: {{  weather.getPressure }}hPa</p>
+                                        <p>Humidity: {{  weather.getHumidity }}%</p>
+                                        <p>Wind: {{  weather.getWindSpeed }}km/h</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+{% endblock %}
