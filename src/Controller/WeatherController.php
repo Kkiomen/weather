@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Api\OpenWeatherMapApi;
 use App\Classes\Weather;
-use App\Entity\City;
+use App\Classes\City;
 use App\Form\WeatherType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\FormError;

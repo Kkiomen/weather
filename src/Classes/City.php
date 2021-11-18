@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Entity;
+namespace App\Classes;
 
 use App\Repository\CityRepository;
 use Doctrine\ORM\Mapping as ORM;
